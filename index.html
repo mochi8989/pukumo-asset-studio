@@ -8,14 +8,14 @@
 <title>シームレスパターンチェッカー｜Pukumo Asset Studio</title>
 <style>
 *{box-sizing:border-box}body{margin:0;background:#10141d;color:#edf2fa;font:15px/1.7 system-ui,-apple-system,'Segoe UI',sans-serif}button,input{font:inherit}button{cursor:pointer;border:1px solid #3a465d;border-radius:9px;background:#242e40;color:#edf2fa;min-height:44px;padding:9px 18px}button:hover:not(:disabled){background:#33445f}button:focus-visible,input:focus-visible{outline:3px solid #8bbaff;outline-offset:4px}button:disabled{opacity:.4;cursor:default}header{border-bottom:1px solid #293244;padding:22px max(24px,calc((100vw - 1440px)/2))}.brand{display:flex;align-items:center;gap:13px}.mark{display:grid;grid-template-columns:repeat(2,10px);gap:4px;padding:11px;border-radius:12px;background:#20334f}.mark i{width:10px;height:10px;border-radius:3px;background:#8bbaff}h1{font-size:20px;letter-spacing:.02em;margin:0}header small{color:#9caac1}.version{margin-left:auto;color:#a4b2c9;border:1px solid #344055;border-radius:6px;padding:1px 8px;font-size:12px}main{max-width:1440px;margin:auto;padding:30px 24px}h2{font-size:24px;margin:0 0 5px}.intro{margin:0 0 26px;color:#9caac1}.layout{display:grid;grid-template-columns:280px minmax(0,1fr);gap:22px}.panel{background:#181f2b;border:1px solid #2c3648;border-radius:14px}.sidebar{padding:22px;height:fit-content}.eyebrow{color:#93b9f7;font-size:12px;letter-spacing:.14em;margin:0 0 14px}.drop{border:1px dashed #536582;border-radius:10px;padding:24px 12px;text-align:center;background:#1c2534}.drop p{font-size:13px;color:#b0bdd1;margin:10px 0}.primary{background:#396fca;border-color:#5086df;width:100%;font-weight:600}.primary:hover:not(:disabled){background:#477fdb}.hint{font-size:12px;color:#91a0b9}.file-info{padding:20px 0;border-bottom:1px solid #2c3648;overflow-wrap:anywhere}.file-info strong{display:block;font-size:14px}.file-info span{color:#9db9e7;font-variant-numeric:tabular-nums}.privacy{color:#a7b5cb;font-size:12px;margin:22px 0 0}.privacy strong{display:block;color:#c4d7f1;font-size:13px;margin-bottom:6px}.toolbar{padding:16px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;border-bottom:1px solid #2c3648}.switch{display:flex;gap:6px}.switch button{padding:7px 15px;font-size:13px}.switch button[aria-pressed=true]{background:#294d80;border-color:#6b9feb;color:#fff}label{font-size:13px;color:#b9c7dc;display:flex;align-items:center;gap:7px;min-height:44px}input[type=checkbox]{width:17px;height:17px;accent-color:#71a7ff}.stage{height:clamp(340px,62vh,760px);padding:24px;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative;background:#131923;border-radius:0 0 14px 14px}.stage.dragging,.drop.dragging{outline:2px solid #82b5ff;outline-offset:-3px;background:#20324b}.empty{text-align:center;color:#8f9eb7}.empty .icon{font-size:48px;color:#607da8;line-height:1}.empty strong{display:block;font-weight:500;color:#c8d5e8;margin-top:20px}.empty p{font-size:13px}canvas{display:block;background-color:#e8ebf0;background-image:conic-gradient(#d4dae3 25%,transparent 0 50%,#d4dae3 0 75%,transparent 0);background-size:16px 16px;max-width:100%;max-height:100%}[hidden]{display:none!important}.status{min-height:26px;margin:12px 0 0;font-size:13px;color:#b0bed2}.status.error{color:#ffb6b6}.foot{display:flex;justify-content:space-between;gap:12px;color:#8493ac;font-size:12px;margin-top:14px}noscript{display:block;padding:20px;color:#ffb6b6}@media(max-width:800px){.layout{grid-template-columns:1fr}.sidebar{display:grid;grid-template-columns:1fr 1fr;gap:16px}.eyebrow{grid-column:1/-1;margin:0}.file-info{padding:0;border:0}.privacy{grid-column:1/-1;margin:0}.stage{height:56vh;min-height:300px}main{padding:22px 16px}header{padding:17px 16px}.intro{font-size:13px}}@media(max-width:420px){h1{font-size:17px}.sidebar{display:block}.eyebrow{margin-bottom:12px}.file-info{padding-top:15px}.privacy{margin-top:15px}.toolbar{padding:12px}.stage{padding:12px}.foot{display:block}}
-</style>
+.assessment{margin-top:16px;padding:16px 18px;border:1px solid #40516b;border-radius:10px;background:#1b293c}.assessment strong{display:block;font-size:16px}.assessment p{margin:5px 0 0;font-size:12px;color:#b7c5db}.assessment.good{border-color:#408770}.assessment.good strong{color:#9ce0c0}.assessment.warn{border-color:#b58a48}.assessment.warn strong{color:#ffd18e}</style>
 </head>
 <body>
 <header><div class="brand"><span class="mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><div><h1>シームレスパターンチェッカー｜Pukumo Asset Studio</h1><small>素材づくりの、小さな作業室。</small></div><span class="version">v0.1</span></div></header>
 <main><h2>シームレスパターンを確認</h2><p class="intro">画像を並べて、つなぎ目をチェック。素材はこの端末の中だけで扱います。</p>
 <noscript>このアプリを使うには、ブラウザのJavaScriptを有効にしてください。</noscript>
 <div class="layout"><aside class="panel sidebar"><p class="eyebrow">01 / 画像を選ぶ</p><div class="drop" id="drop"><button class="primary" id="choose">画像を選択</button><input id="file" type="file" accept="image/png,image/jpeg,image/webp,.png,.jpg,.jpeg,.webp" hidden><p>または、ここにドロップ</p><span class="hint">PNG / JPG / WebP</span></div><div class="file-info"><strong id="filename">画像が選択されていません</strong><span id="dimensions">— × — px</span></div><p class="privacy"><strong>画像は外部に送信されません</strong>読み込みと表示はブラウザ内で完結します。画像は保存されず、ページを閉じると破棄されます。</p></aside>
-<section aria-label="画像プレビュー"><div class="panel"><div class="toolbar"><div class="switch" role="group" aria-label="表示モード"><button id="original" aria-pressed="false" disabled>元画像</button><button id="tiles" aria-pressed="true" disabled>3×3タイル</button></div><label><input id="guides" type="checkbox" disabled>境界ガイド</label></div><div class="stage" id="stage"><div class="empty" id="empty"><div class="icon" aria-hidden="true">▦</div><strong>パターンのつながりを、ひと目で。</strong><p>画像を選択すると、ここにプレビューが表示されます。</p></div><canvas id="preview" role="img" aria-label="画像プレビュー" hidden></canvas></div></div><p class="status" id="status" role="status" aria-live="polite">画像を選択してください。</p><div class="foot"><span>自動判定・自動修正は行いません。</span><span>端末内処理 / 保存なし</span></div></section></div>
+<section aria-label="画像プレビュー"><div class="panel"><div class="toolbar"><div class="switch" role="group" aria-label="表示モード"><button id="original" aria-pressed="false" disabled>元画像</button><button id="tiles" aria-pressed="true" disabled>3×3タイル</button></div><label><input id="guides" type="checkbox" disabled>境界ガイド</label></div><div class="stage" id="stage"><div class="empty" id="empty"><div class="icon" aria-hidden="true">▦</div><strong>パターンのつながりを、ひと目で。</strong><p>画像を選択すると、ここにプレビューが表示されます。</p></div><canvas id="preview" role="img" aria-label="画像プレビュー" hidden></canvas></div></div><div class="assessment" id="assessment" role="status" aria-live="polite" hidden><strong id="verdict"></strong><p id="edge-details"></p><p>簡易判定：左右・上下の端の色と透明度を比較しています。絵柄や圧縮によって誤判定するため、3×3表示でも確認してください。</p></div><p class="status" id="status" role="status" aria-live="polite">画像を選択してください。</p><div class="foot"><span>端の一致を簡易判定 / 自動修正なし</span><span>端末内処理 / 保存なし</span></div></section></div>
 </main>
 <script>
 'use strict';
@@ -53,6 +53,56 @@
     $('guides').disabled=!state.image||mode===1;
     renderPreview();
   }
+  // Compare native-resolution edge pixels in bounded strips, without storing images.
+  function analyzeEdges(image) {
+    const strip=document.createElement('canvas');
+    const context=strip.getContext('2d', {willReadFrequently:true});
+    if(!context)throw new Error('analysis');
+    const w=image.naturalWidth,h=image.naturalHeight;
+    function compare(horizontal) {
+      const length=horizontal?h:w;
+      let mismatches=0,total=0;
+      for(let start=0;start<length;start+=2048) {
+        const n=Math.min(2048,length-start);
+        strip.width=horizontal?2:n;strip.height=horizontal?n:2;
+        if(horizontal){
+          context.drawImage(image,0,start,1,n,0,0,1,n);
+          context.drawImage(image,w-1,start,1,n,1,0,1,n);
+        }else{
+          context.drawImage(image,start,0,n,1,0,0,n,1);
+          context.drawImage(image,start,h-1,n,1,0,1,n,1);
+        }
+        const data=context.getImageData(0,0,strip.width,strip.height).data;
+        for(let i=0;i<n;i++){
+          const a=horizontal?i*8:i*4,b=horizontal?a+4:(n+i)*4;
+          const alphaA=data[a+3]/255,alphaB=data[b+3]/255;
+          let difference=0;
+          // Compare against both black and white to account for transparency.
+          for(let c=0;c<3;c++){
+            const delta=data[a+c]*alphaA-data[b+c]*alphaB;
+            difference=Math.max(difference,Math.abs(delta),Math.abs(delta+255*(alphaB-alphaA)));
+          }
+          total+=difference;
+          if(difference>16)mismatches++;
+        }
+      }
+      return {pass:mismatches/length<=0.01&&total/length<=4,percent:100*mismatches/length};
+    }
+    try{return {horizontal:compare(true),vertical:compare(false)};}
+    finally{strip.width=strip.height=1;}
+  }
+  function showAssessment(image) {
+    const panel=$('assessment');panel.hidden=false;
+    try{
+      const result=analyzeEdges(image),ok=result.horizontal.pass&&result.vertical.pass;
+      panel.className='assessment '+(ok?'good':'warn');
+      $('verdict').textContent=ok?'シームレスパターンになっています（簡易判定）':'つなぎ目にズレがある可能性があります（簡易判定）';
+      $('edge-details').textContent='左右のつなぎ目：'+(result.horizontal.pass?'一致':'不一致')+' / 上下のつなぎ目：'+(result.vertical.pass?'一致':'不一致');
+    }catch(error){
+      panel.className='assessment warn';$('verdict').textContent='簡易判定できませんでした';
+      $('edge-details').textContent='3×3表示でつなぎ目を確認してください。';
+    }
+  }
   async function loadImage(file) {
     if(!file)return;
     const generation=++state.generation;
@@ -79,6 +129,7 @@
       $('empty').hidden=true;canvas.hidden=false;
       $('original').disabled=false;$('tiles').disabled=false;
       setMode(state.mode);
+      showAssessment(image);
       message('読み込み完了。表示を切り替えて、つなぎ目を確認できます。');
     } catch(error) {
       if(generation!==state.generation)return;
@@ -109,6 +160,7 @@
     canvas.width=1;canvas.height=1;canvas.hidden=true;$('empty').hidden=false;
     $('filename').textContent='画像が選択されていません';$('dimensions').textContent='— × — px';
     $('original').disabled=true;$('tiles').disabled=true;$('guides').disabled=true;$('file').value='';
+    $('assessment').hidden=true;$('verdict').textContent='';$('edge-details').textContent='';
     message('画像を選択してください。');
   });
 })();
